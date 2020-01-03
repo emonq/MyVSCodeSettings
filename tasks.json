@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile",
+            "label": "C++Compile",
             "type": "shell",
             "group": "build",
             "presentation": {
@@ -22,12 +22,9 @@
             }
         },
         {
-            "label": "CompileO2",
+            "label": "CCompile",
             "type": "shell",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -35,37 +32,14 @@
                 "panel": "shared"
             },
             "windows": {
-                "command": "g++",
+                "command": "gcc",
                 "args": [
                     "-ggdb",
-                    "-O2",
                     "\"${file}\"",
                     "-o",
                     "\"${fileDirname}\\${fileBasenameNoExtension}.exe\""
                 ]
             }
         },
-        {
-            "type": "shell",
-            "label": "gcc build active file",
-            "command": "gcc",
-            "args": [
-                "-g",
-                "${file}",
-                "-O0",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "C:\\Program Files\\mingw-w64\\bin"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
     ]
 }

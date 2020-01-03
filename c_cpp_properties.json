@@ -10,13 +10,21 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "\"C:/Program Files/mingw-w64/bin/gcc.exe\"",
+            "compilerPath": "\"C:/Program Files/mingw/bin/gcc.exe\"",
             "cStandard": "c11",
             "cppStandard": "c++11",
-            "intelliSenseMode": "gcc-x64",
-            "compilerArgs": [
-                "-Wall"
-            ]
+            "compilerArgs": []
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4
