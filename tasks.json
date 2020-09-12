@@ -3,7 +3,7 @@
     "tasks": [
 		{
 			"type": "shell",
-			"label": "C/C++: build",
+			"label": "C/C++: Build",
 			"command": "g++",
 			"args": [
 				"-g",
@@ -32,13 +32,36 @@
 			},
 		},
 		{
-			"label": "C/C++: run",
+			"label": "C/C++: Build and run",
 			"type": "shell",
-			"dependsOn": "C/C++: build",
+			"dependsOn": "C/C++: Build",
 			"command": "${fileDirname}/${fileBasenameNoExtension}",
 			"presentation": {
 				"focus": true,
 				"clear": false,
+				"echo": false,
+				"revealProblems": "onProblem",
+				"showReuseMessage": true,
+				"panel":"shared"
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"windows": {
+				"command": "${fileDirname}/${fileBasenameNoExtension}.exe"
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "C/C++: Run",
+			"type": "shell",
+			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"presentation": {
+				"focus": true,
+				"clear": true,
 				"echo": false,
 				"revealProblems": "onProblem",
 				"showReuseMessage": true,
