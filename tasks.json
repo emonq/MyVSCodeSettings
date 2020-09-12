@@ -1,45 +1,59 @@
 {
     "version": "2.0.0",
     "tasks": [
-        {
-            "label": "C++Compile",
-            "type": "shell",
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "windows": {
-                "command": "g++",
-                "args": [
-                    "-ggdb",
-                    "\"${file}\"",
-                    "-o",
-                    "\"${fileDirname}\\${fileBasenameNoExtension}.exe\""
-                ]
-            }
-        },
-        {
-            "label": "CCompile",
-            "type": "shell",
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "windows": {
-                "command": "gcc",
-                "args": [
-                    "-ggdb",
-                    "\"${file}\"",
-                    "-o",
-                    "\"${fileDirname}\\${fileBasenameNoExtension}.exe\""
-                ]
-            }
-        },
-    ]
+		{
+			"type": "shell",
+			"label": "C/C++: build",
+			"command": "g++",
+			"args": [
+				"-g",
+				"-Wall",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": false,
+				"revealProblems":"onProblem",
+				"focus": false,
+				"panel":"shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+		},
+		{
+			"label": "C/C++: run",
+			"type": "shell",
+			"dependsOn": "C/C++: build",
+			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"presentation": {
+				"focus": true,
+				"clear": false,
+				"echo": false,
+				"revealProblems": "onProblem",
+				"showReuseMessage": true,
+				"panel":"shared"
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"windows": {
+				"command": "${fileDirname}/${fileBasenameNoExtension}.exe"
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		}
+	]
 }

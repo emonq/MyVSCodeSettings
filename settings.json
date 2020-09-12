@@ -1,0 +1,9 @@
+{
+    "todo-tree.tree.scanMode": "workspace",
+    "files.associations": {
+        "*.html": "html",
+        "string": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}
