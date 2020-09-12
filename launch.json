@@ -8,18 +8,17 @@
         {
             "name": "GDB",
             "windows": {
-                "program":"${fileDirname}/${fileBasenameNoExtension}.exe"
+                "program":"${fileDirname}/${fileBasenameNoExtension}.exe",
+                "externalConsole": true
             },
-            "linux": {
-                "program":"${fileDirname}/${fileBasenameNoExtension}"
-            },
+            "program":"${fileDirname}/${fileBasenameNoExtension}",
             "type": "cppdbg",
             "request": "launch",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
                 {
